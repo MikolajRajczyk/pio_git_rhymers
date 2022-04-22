@@ -1,7 +1,7 @@
 package edu.kis.vh.nursery.list;
 
 public class IntLinkedList {
-    public static final int EMPTY_SIZE = -1;
+    private static final int EMPTY_SIZE = -1;
     Node last;
 
     public void push(int i) {
