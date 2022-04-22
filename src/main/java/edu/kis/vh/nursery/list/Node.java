@@ -6,15 +6,11 @@ public class Node {
     private Node next;
 
     public Node(int i) {
-        setValue(i);
+        this.value = i;
     }
 
     public int getValue() {
         return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
     }
 
     public Node getPrev() {
