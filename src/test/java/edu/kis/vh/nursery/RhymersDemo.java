@@ -10,7 +10,10 @@ class RhymersDemo {
     private static final int COUNTING_START = 1;
 
     public static void main(String[] args) {
-        RhymersFactory factory = new DefaultRhymersFactory();
+        testRhymers(new DefaultRhymersFactory());
+    }
+
+    private static void testRhymers(RhymersFactory factory) {
         DefaultCountingOutRhymer[] rhymers = {
             factory.getStandardRhymer(),
             factory.getFalseRhymer(),
