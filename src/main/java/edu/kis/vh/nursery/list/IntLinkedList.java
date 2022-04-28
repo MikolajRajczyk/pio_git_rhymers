@@ -3,6 +3,7 @@ package edu.kis.vh.nursery.list;
 public class IntLinkedList {
     private static final int EMPTY_SIZE = -1;
 
+    //14. Przeprowadzono testy jednostkowe po reorganizacji projektu - wszystkie zakonczone sukcesem.
     private static class Node {
         private final int value;
         private Node prev;
