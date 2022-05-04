@@ -1,30 +1,50 @@
 package edu.kis.vh.nursery.factory;
 
-import edu.kis.vh.nursery.defaultCountingOutRhymer;
+import edu.kis.vh.nursery.DefaultCountingOutRhymer;
 import edu.kis.vh.nursery.FIFORhymer;
 import edu.kis.vh.nursery.HanoiRhymer;
-import edu.kis.vh.nursery.factory.Rhymersfactory;
 
-public class DefaultRhymersFactory implements Rhymersfactory {
+/**
+ *  Klasa DefaultRhymersFactory implementująca interfejs Rhymers Factory
+ *  zawiera gettery tworzące i zwracające nowe obiekty
+ *  klasy DefaultCountingOutRhymer oraz klas z niej dziedziczących - FIFORhymer oraz HanoiRhymer
+ */
+public class DefaultRhymersFactory implements RhymersFactory {
 
-	@Override
-	public defaultCountingOutRhymer GetStandardRhymer() {
-		return new defaultCountingOutRhymer();
-	}
+    /**
+     * Metoda zwraca obiekt klasy DefaultCountingOutRhymer. Nie przyjmuje żadnych parametrów
+     * @return Obiekt klasy DefaultCountingOutRhymer
+     */
+    @Override
+    public DefaultCountingOutRhymer getStandardRhymer() {
+        return new DefaultCountingOutRhymer();
+    }
 
-	@Override
-	public defaultCountingOutRhymer GetFalseRhymer() {
-		return new defaultCountingOutRhymer();
-	}
+    /**
+     * Metoda zwraca obiekt klasy DefaultCountingOutRhymer. Nie przyjmuje żadnych parametrów
+     * @return Obiekt klasy DefaultCountingOutRhymer
+     */
+    //TODO: dodać klasę FalseRhymer lub usunąć tę metodę i zamienić wystąpienia w kodzie na wywołania metody getStandardRhymer
+    @Override
+    public DefaultCountingOutRhymer getFalseRhymer() {
+        return new DefaultCountingOutRhymer();
+    }
 
-	@Override
-	public defaultCountingOutRhymer GetFIFORhymer() {
-		return new FIFORhymer();
-	}
+    /**
+     * Metoda zwraca obiekt klasy FIFORhymer. Nie przyjmuje żadnych parametrów
+     * @return Obiekt klasy FIFORhymer
+     */
+    @Override
+    public DefaultCountingOutRhymer getFIFORhymer() {
+        return new FIFORhymer();
+    }
 
-	@Override
-	public defaultCountingOutRhymer GetHanoiRhymer() {
-		return new HanoiRhymer();
-	}
-
+    /**
+     * Metoda zwraca obiekt klasy HanoiRhymer. Nie przyjmuje żadnych parametrów
+     * @return Obiekt klasy HanoiRhymer
+     */
+    @Override
+    public DefaultCountingOutRhymer getHanoiRhymer() {
+        return new HanoiRhymer();
+    }
 }

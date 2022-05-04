@@ -1,17 +1,22 @@
 package edu.kis.vh.nursery;
 
-public class HanoiRhymer extends defaultCountingOutRhymer {
+public class HanoiRhymer extends DefaultCountingOutRhymer {
+    // Poczatkowa wartosc pusta nie ma podstawy  byc zmieniana w przyszlosci
+    // wiec wyprowadzanie stalej nie ma sensu
+    private int totalRejected = 0;
 
-int totalRejected = 0;
+    public int reportRejected() {
+        return totalRejected;
+    }
 
-	public int reportRejected() {
-		return totalRejected;
-	}
-
-	public void countIn(int in) {
-	if (!callCheck() && in > peekaboo())
-			totalRejected++;
-			else
-				super.countIn(in);
-	}
+    @Override
+    public void countIn(int in) {
+        if (!callCheck() && in > peekaboo())
+            totalRejected++;
+        else
+            super.countIn(in);
+		//Wiersze znajdujace sie powyzej (if-else) byly niepoprawnie sformatowane.
+    }
 }
+//Alt + right/left arrow <=> zmiana aktualnie otwartej karty w IDE w odpowiednio
+//prawo lub w lewo.
