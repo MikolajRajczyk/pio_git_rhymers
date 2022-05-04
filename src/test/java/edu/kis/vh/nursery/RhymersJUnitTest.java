@@ -1,5 +1,6 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.list.IntLinkedList;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -72,5 +73,68 @@ public class RhymersJUnitTest {
         Assert.assertEquals(TEST_VALUE, result);
         result = rhymer.countOut();
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
+    }
+
+    @Test
+    public void testHanoiRhymersCountIn() {
+        HanoiRhymer rhymer = new HanoiRhymer();
+        rhymer.countIn(TEST_VALUE);
+        final int TEST_VALUE_HANOI = 5;
+        final int EXPECTED_REJECTED = 1;
+
+        rhymer.countIn(TEST_VALUE_HANOI);
+
+        int result = rhymer.peekaboo();
+        Assert.assertEquals(TEST_VALUE, result);
+        Assert.assertEquals(rhymer.reportRejected(), EXPECTED_REJECTED);
+    }
+
+    @Test
+    public void testFifoRhymersCountOut() {
+        FIFORhymer rhymer = new FIFORhymer();
+        final int EMPTY_STACK_RET = -1;
+
+        int result = rhymer.countOut();
+        Assert.assertEquals(EMPTY_STACK_RET, result);
+
+        rhymer.countIn(TEST_VALUE);
+        rhymer.countIn(TEST_VALUE + 1);
+        result = rhymer.countOut();
+        Assert.assertEquals(TEST_VALUE, result);
+        result = rhymer.countOut();
+        Assert.assertEquals(TEST_VALUE + 1, result);
+        result = rhymer.countOut();
+        Assert.assertEquals(EMPTY_STACK_RET, result);
+    }
+
+    @Test
+    public void testLinkedListEmpty() {
+        IntLinkedList linkedList = new IntLinkedList();
+
+        Assert.assertTrue(linkedList.isEmpty());
+    }
+
+    @Test
+    public void testLinkedListPush_Pop() {
+        IntLinkedList linkedList = new IntLinkedList();
+
+        linkedList.push(TEST_VALUE);
+        Assert.assertEquals(linkedList.pop(), TEST_VALUE);
+    }
+
+    @Test
+    public void testLinkedListFull() {
+        IntLinkedList linkedList = new IntLinkedList();
+
+        Assert.assertFalse(linkedList.isFull());
+    }
+
+    @Test
+    public void testLinkedListTop() {
+        IntLinkedList linkedList = new IntLinkedList();
+
+        linkedList.push(TEST_VALUE);
+        Assert.assertEquals(linkedList.top(), TEST_VALUE);
+        Assert.assertEquals(linkedList.top(), TEST_VALUE);
     }
 }
