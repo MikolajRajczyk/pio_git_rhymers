@@ -24,6 +24,7 @@ public class DefaultRhymersFactory implements RhymersFactory {
      * Metoda zwraca obiekt klasy DefaultCountingOutRhymer. Nie przyjmuje żadnych parametrów
      * @return Obiekt klasy DefaultCountingOutRhymer
      */
+    //TODO: dodać klasę FalseRhymer lub usunąć tę metodę i zamienić wystąpienia w kodzie na wywołania metody getStandardRhymer
     @Override
     public DefaultCountingOutRhymer getFalseRhymer() {
         return new DefaultCountingOutRhymer();

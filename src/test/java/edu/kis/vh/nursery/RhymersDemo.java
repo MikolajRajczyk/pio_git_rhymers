@@ -32,6 +32,7 @@ class RhymersDemo {
             rhymers[HANOI_RHYMER_I].countIn(rn.nextInt(20));
         }
 
+        //TODO: tradycyjną pętlę for można zamienić na pętle enhanced for (for-each)
         for (int i = 0; i < rhymers.length; i++) {
             while (!rhymers[i].callCheck())
                 System.out.print(rhymers[i].countOut() + "  ");
