@@ -1,8 +1,41 @@
 package edu.kis.vh.nursery.list;
 
+//TODO: usunąć klasę IntLinkedList i odpowiadające jej testy, jeżeli nie zostanie użyta w przyszłości
 public class IntLinkedList {
     private static final int EMPTY_SIZE = -1;
-    Node last;
+
+    //14. Przeprowadzono testy jednostkowe po reorganizacji projektu - wszystkie zakonczone sukcesem.
+    private static class Node {
+        private final int value;
+        private Node prev;
+        private Node next;
+
+        public Node(int i) {
+            this.value = i;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public Node getPrev() {
+            return prev;
+        }
+
+        public void setPrev(Node prev) {
+            this.prev = prev;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
+    }
+
+    private Node last;
 
     public void push(int i) {
         if (last == null)

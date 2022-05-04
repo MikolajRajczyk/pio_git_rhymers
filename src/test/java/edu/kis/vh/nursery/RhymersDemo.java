@@ -10,7 +10,10 @@ class RhymersDemo {
     private static final int COUNTING_START = 1;
 
     public static void main(String[] args) {
-        RhymersFactory factory = new DefaultRhymersFactory();
+        testRhymers(new DefaultRhymersFactory());
+    }
+
+    private static void testRhymers(RhymersFactory factory) {
         DefaultCountingOutRhymer[] rhymers = {
             factory.getStandardRhymer(),
             factory.getFalseRhymer(),
@@ -29,6 +32,7 @@ class RhymersDemo {
             rhymers[HANOI_RHYMER_I].countIn(rn.nextInt(20));
         }
 
+        //TODO: tradycyjną pętlę for można zamienić na pętle enhanced for (for-each)
         for (int i = 0; i < rhymers.length; i++) {
             while (!rhymers[i].callCheck())
                 System.out.print(rhymers[i].countOut() + "  ");
